@@ -23,7 +23,6 @@
 *{box-sizing:border-box}
 html,body{margin:0; padding:0; background:#fff; color:var(--ink); font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
 
-/* Mobile-first width: less aggressive margins on small screens */
 .wrap{
   width:min(1120px, 94vw);
   margin: 14px auto 64px;
@@ -104,7 +103,6 @@ html,body{margin:0; padding:0; background:#fff; color:var(--ink); font-family:Mo
 
 .heroText{ position:relative; z-index:2; max-width: 920px; padding: 10px 12px; }
 
-/* Updated hero typography */
 .heroMain{
   margin:0;
   font-family:Poppins, sans-serif;
@@ -135,7 +133,6 @@ html,body{margin:0; padding:0; background:#fff; color:var(--ink); font-family:Mo
   font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* Liceo del Valle line */
 .heroOrg{
   margin: 12px 0 0;
   font-family: Poppins, sans-serif;
@@ -146,7 +143,7 @@ html,body{margin:0; padding:0; background:#fff; color:var(--ink); font-family:Mo
   color: rgba(255,255,255,.82);
 }
 
-/* ====== 40 + FRASES ====== */
+/* ====== 40 + TEXTO ÚNICO ====== */
 .introRow{
   display:grid;
   grid-template-columns: 280px 1fr;
@@ -234,9 +231,6 @@ html,body{margin:0; padding:0; background:#fff; color:var(--ink); font-family:Mo
 @media (max-width: 860px){
   .phraseCard p{ font-size: 15.6px; }
 }
-.phraseCard strong{
-  font-family:Poppins, sans-serif;
-}
 
 /* ====== PILARES GRANDES ====== */
 .pillars{
@@ -259,17 +253,18 @@ html,body{margin:0; padding:0; background:#fff; color:var(--ink); font-family:Mo
   padding: 18px 18px;
   cursor:pointer;
   transition:.22s;
-
-  /* key change: allow description to sit full-width below (no left wasted space) */
-  display:flex;
-  flex-wrap:wrap;
-  gap: 12px;
-  align-items:center;
 }
 .pillar:hover{
   transform: translateY(-2px);
   border-color: rgba(255,74,26,.46);
   box-shadow: var(--shadow2);
+}
+
+.pRow{
+  display:grid;
+  grid-template-columns: 68px 1fr;
+  gap: 14px;
+  align-items:center;
 }
 .pIcon{
   width: 68px; height: 68px;
@@ -278,41 +273,21 @@ html,body{margin:0; padding:0; background:#fff; color:var(--ink); font-family:Mo
   box-shadow: 0 22px 55px rgba(255,74,26,.24);
   display:grid;
   place-items:center;
-  flex: 0 0 auto;
 }
 .pIcon svg{width:32px;height:32px;stroke:#fff;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-
-/* title next to icon */
-.pTxt{
-  flex: 1 1 auto;
-  min-width: 0;
-}
 .pTxt h3{
   margin:0;
   font-family:Poppins, sans-serif;
   font-weight:800;
   font-size: 18.2px;
 }
-
-/* description full width under the row (no empty left space) */
 .pDesc{
-  width:100%;
-  margin: 0;
+  margin-top: 10px;
+  margin-left: 0;
   color: var(--muted);
   font-size: 14.8px;
   line-height:1.35;
   font-weight:600;
-}
-
-/* ====== HOWTO ====== */
-.howto{
-  border:1px solid rgba(255,74,26,.26);
-  border-radius: var(--radius);
-  padding: 14px 16px;
-  background: rgba(255,74,26,.07);
-  box-shadow: 0 16px 34px rgba(255,74,26,.12);
-  font-size: 16px;
-  font-weight:800;
 }
 
 /* ====== SECCIONES ====== */
@@ -369,9 +344,10 @@ html,body{margin:0; padding:0; background:#fff; color:var(--ink); font-family:Mo
 @media (max-width: 860px){
   .sectionDesc{ font-size: 16px; line-height: 1.65; }
 }
-
-/* Quotes removed */
-.quote{ display:none; }
+.sectionDesc strong{
+  font-weight:800;
+  font-family:Poppins, sans-serif;
+}
 
 /* ====== TILES ====== */
 .sectionBody{ padding: 16px 18px 20px; }
@@ -385,7 +361,35 @@ html,body{margin:0; padding:0; background:#fff; color:var(--ink); font-family:Mo
   font-size: 12.5px;
   margin: 12px 0 12px;
 }
+.groupTitle.light{
+  font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  text-transform:none;
+  letter-spacing:0;
+  font-weight:500;
+  color:#64748b;
+  font-size: 14px;
+  margin: 12px 0 12px;
+}
 
+.gtStrong{
+  font-family:Poppins, sans-serif;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:#64748b;
+}
+.gtLight{
+  font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight:500;
+  color:#64748b;
+}
+.noteLight{
+  font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight:500;
+  color:#94a3b8;
+}
+
+/* tiles container */
 .tiles{
   display:flex;
   flex-wrap:wrap;
@@ -444,6 +448,11 @@ html,body{margin:0; padding:0; background:#fff; color:var(--ink); font-family:Mo
   font-weight:600;
   font-size: 14.8px;
   line-height:1.2;
+}
+.tText .paren{
+  font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight:500;
+  color:#94a3b8;
 }
 .tNote{
   margin-top:6px;
@@ -546,6 +555,36 @@ hr.sep{
 .openLink:hover{transform:translateY(-1px); box-shadow: var(--shadow2);}
 .openLink svg{width:18px;height:18px;stroke:var(--orange);stroke-width:2;fill:none}
 
+/* ===== Non-button list tiles for "labor social en familia" ===== */
+.listTile{
+  cursor:default;
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+  box-shadow: 0 10px 24px rgba(15,23,42,.06);
+}
+.listTile::before{ opacity:0 !important; }
+.listTile:hover{
+  transform:none;
+  border-color:#e5e7eb;
+  box-shadow: 0 10px 24px rgba(15,23,42,.06);
+}
+.listTile .tIco{
+  background: rgba(100,116,139,.10);
+  border-color: rgba(100,116,139,.18);
+}
+.listTile .tIco svg{ stroke:#64748b; }
+.listTile.on{
+  background:#f3f4f6;
+  border-color:#e5e7eb;
+  box-shadow: 0 10px 24px rgba(15,23,42,.06);
+}
+.listTile.on .tIco{
+  background: rgba(100,116,139,.10);
+  border-color: rgba(100,116,139,.18);
+  box-shadow:none;
+}
+.listTile.on .tIco svg{ stroke:#64748b; }
+
 /* ===== Mobile: 2 tiles per row ===== */
 @media (max-width: 640px){
   .tabs{ margin: 12px 0 10px; }
@@ -553,7 +592,6 @@ hr.sep{
   .heroTop{ height: 360px; padding: 18px 14px; }
   .heroText{ padding: 6px 8px; }
 
-  .howto{ font-size: 15.5px; padding: 12px 14px; }
   .section{ margin-top: 18px; }
   .sectionHead{ padding: 18px 16px 14px; }
   .sectionBody{ padding: 14px 14px 18px; }
@@ -578,6 +616,8 @@ hr.sep{
   .tIco svg{ width:28px; height:28px; }
   .tText{ font-size: 14.3px; font-weight:600; }
   .tNote{ font-size: 12.6px; }
+
+  .groupTitle.light{ font-size: 13.8px; }
 }
 </style>
 </head>
@@ -596,7 +636,7 @@ hr.sep{
       </div>
     </div>
 
-    <!-- Tabs moved: below hero text and before 40 block -->
+    <!-- Tabs -->
     <nav class="tabs" aria-label="Pestañas">
       <button class="tab active" data-tab="home">
         <svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9H4v-9Z"/><path d="M9 20v-6h6v6"/></svg>
@@ -608,16 +648,13 @@ hr.sep{
       </button>
     </nav>
 
-    <!-- 40 + 2 frases -->
+    <!-- 40 + TEXTO ÚNICO -->
     <div class="introRow">
       <div class="big40"><span>40</span></div>
 
       <div class="phraseCol">
         <div class="phraseCard">
-          <p>La Cuaresma recuerda los 40 días que Jesús pasó en el desierto preparándose para cumplir su misión y asumir plenamente quién era: <strong>el Hijo enviado por el Padre</strong>.</p>
-        </div>
-        <div class="phraseCard">
-          <p><strong>Reto 40</strong> propone a los papás vivir 40 días con ese mismo objetivo: prepararse para ejercer mejor su misión como esposos y padres. Durante 40 días trabajarás en tres pilares:</p>
+          <p>Inspirado en los <strong>40 días que Jesús pasó en el desierto</strong> preparándose para su misión, el Reto 40 de Cuaresma es un ejercicio para papás que busca ayudarles a crecer como esposos y padres, trabajando en tres pilares fundamentales.</p>
         </div>
       </div>
     </div>
@@ -629,49 +666,51 @@ hr.sep{
     <!-- 3 pilares -->
     <div class="pillars">
       <div class="pillar" onclick="jump('vida')">
-        <div class="pIcon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 21s-7-4.2-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6.8-7 11-7 11Z"/>
-            <path d="M12 7v6"/><path d="M9.5 10h5"/>
-          </svg>
-        </div>
-        <div class="pTxt">
-          <h3>Vida espiritual</h3>
+        <div class="pRow">
+          <div class="pIcon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21s-7-4.2-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6.8-7 11-7 11Z"/>
+              <path d="M12 7v6"/><path d="M9.5 10h5"/>
+            </svg>
+          </div>
+          <div class="pTxt">
+            <h3>Vida espiritual</h3>
+          </div>
         </div>
         <div class="pDesc">Compromiso diario de oración y trato con Dios.</div>
       </div>
 
       <div class="pillar" onclick="jump('sacrificio')">
-        <div class="pIcon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3 19 6v6c0 5-3.2 8.8-7 10-3.8-1.2-7-5-7-10V6l7-3Z"/>
-            <path d="M12 7v8"/><path d="M9.5 11h5"/>
-          </svg>
-        </div>
-        <div class="pTxt">
-          <h3>Sacrificio personal</h3>
+        <div class="pRow">
+          <div class="pIcon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3 19 6v6c0 5-3.2 8.8-7 10-3.8-1.2-7-5-7-10V6l7-3Z"/>
+              <path d="M12 7v8"/><path d="M9.5 11h5"/>
+            </svg>
+          </div>
+          <div class="pTxt">
+            <h3>Sacrificio personal</h3>
+          </div>
         </div>
         <div class="pDesc">Pequeños esfuerzos concretos que forjan carácter y dominio propio.</div>
       </div>
 
       <div class="pillar" onclick="jump('caridad')">
-        <div class="pIcon">
-          <svg viewBox="0 0 24 24">
-            <path d="M8 11V6a2 2 0 1 1 4 0v5"/>
-            <path d="M12 11V7a2 2 0 1 1 4 0v6"/>
-            <path d="M16 13V9a2 2 0 1 1 4 0v7c0 3-2 5-5 5H11c-2.8 0-5-2.2-5-5v-3a2 2 0 0 1 2-2h1"/>
-            <path d="M9 14c.7-1 2.2-1 2.9 0l.1.1.1-.1c.7-1 2.2-1 2.9 0 1 .9.4 2.4-.5 3.1l-2.5 1.8-2.5-1.8c-.9-.7-1.5-2.2-.5-3.1Z"/>
-          </svg>
-        </div>
-        <div class="pTxt">
-          <h3>Vivir la Caridad</h3>
+        <div class="pRow">
+          <div class="pIcon">
+            <svg viewBox="0 0 24 24">
+              <path d="M8 11V6a2 2 0 1 1 4 0v5"/>
+              <path d="M12 11V7a2 2 0 1 1 4 0v6"/>
+              <path d="M16 13V9a2 2 0 1 1 4 0v7c0 3-2 5-5 5H11c-2.8 0-5-2.2-5-5v-3a2 2 0 0 1 2-2h1"/>
+              <path d="M9 14c.7-1 2.2-1 2.9 0l.1.1.1-.1c.7-1 2.2-1 2.9 0 1 .9.4 2.4-.5 3.1l-2.5 1.8-2.5-1.8c-.9-.7-1.5-2.2-.5-3.1Z"/>
+            </svg>
+          </div>
+          <div class="pTxt">
+            <h3>Vivir la Caridad</h3>
+          </div>
         </div>
         <div class="pDesc">Mayor presencia en tu familia y servicio a los demás.</div>
       </div>
-    </div>
-
-    <div class="howto">
-      ¿Cómo usar esta página? Arma tu plan, toma una screenshot y guárdalo en tu celular.
     </div>
 
     <!-- VIDA ESPIRITUAL -->
@@ -690,7 +729,7 @@ hr.sep{
           </div>
           <div>
             <h2>Vida Espiritual</h2>
-            <div class="sectionDesc">Un hombre es, antes que nada, hijo. Durante estos 40 días, fortalecerás tu vida espiritual con prácticas concretas y diarias para crecer en esa relación. No se trata de hacer más cosas, sino de vivir profundamente como hijo de Dios.</div>
+            <div class="sectionDesc"><strong>Un hombre es, antes que nada, hijo.</strong> Durante estos 40 días, fortalecerás tu vida espiritual con prácticas concretas y diarias para crecer en esa relación. No se trata de hacer más cosas, sino de vivir profundamente como hijo de Dios.</div>
           </div>
         </div>
       </div>
@@ -726,7 +765,7 @@ hr.sep{
 
         <hr class="sep"/>
 
-        <div class="groupTitle">Ponte en presencia de Dios, elige al menos 2</div>
+        <div class="groupTitle light">En presencia de Dios, elige al menos 2</div>
         <div class="tiles">
           <div class="tile" data-id="vida_rosario">
             <div class="tIco">
@@ -805,7 +844,7 @@ hr.sep{
           </div>
           <div>
             <h2>Sacrificio personal</h2>
-            <div class="sectionDesc">La masculinidad se construye desde el dominio propio. Quien no se gobierna, no puede entregarse. Durante estos 40 días practicarás pequeñas negaciones diarias: renuncias voluntarias que fortalecen tu voluntad, ordenan tus impulsos y te disponen a vivir para tu esposa e hijos; pero sobre todo: te unen a la Cruz de Cristo.</div>
+            <div class="sectionDesc"><strong>La masculinidad se construye desde el dominio propio.</strong> Quien no se gobierna, no puede entregarse. Durante estos 40 días practicarás pequeñas negaciones diarias: renuncias voluntarias que fortalecen tu voluntad, ordenan tus impulsos y te disponen a vivir para tu esposa e hijos; pero sobre todo: te unen a la Cruz de Cristo.</div>
           </div>
         </div>
       </div>
@@ -860,7 +899,7 @@ hr.sep{
 
         <hr class="sep"/>
 
-        <div class="groupTitle">Ponte en presencia de Dios, elige al menos 3</div>
+        <div class="groupTitle light">En presencia de Dios, elige al menos 3</div>
         <div class="tiles">
           <div class="tile" data-id="sac_alcohol">
             <div class="tIco">
@@ -970,13 +1009,16 @@ hr.sep{
           </div>
           <div>
             <h2>Vivir la Caridad</h2>
-            <div class="sectionDesc">Un padre ejerce su autoridad sirviendo. Durante estos 40 días realizarás acciones concretas de amor. El servicio comienza en casa —con tu esposa e hijos, a quienes Dios te ha confiado— y se extiende después al prójimo que lo necesite.</div>
+            <div class="sectionDesc"><strong>Un padre ejerce su autoridad sirviendo.</strong> Durante estos 40 días realizarás acciones concretas de amor. El servicio comienza en casa —con tu esposa e hijos, a quienes Dios te ha confiado— y se extiende después al prójimo que lo necesite.</div>
           </div>
         </div>
       </div>
 
       <div class="sectionBody">
-        <div class="groupTitle">Para mi Familia: Elige al menos una a la semana (puede ser la misma o cambiar cada día)</div>
+        <div class="groupTitle light">
+          <span class="gtStrong">Para mi Familia:</span>
+          <span class="gtLight"> Elige al menos una a la semana (puede ser la misma o cambiar cada día)</span>
+        </div>
 
         <div class="tiles">
           <div class="tile" data-id="car_llegar">
@@ -1021,7 +1063,7 @@ hr.sep{
                 <path d="M5 21h6"/>
               </svg>
             </div>
-            <div><div class="tText">Realizar una tarea doméstica que normalmente no haces o has postergado.</div></div>
+            <div><div class="tText">Realiza una tarea doméstica que no sueles hacer.</div></div>
           </div>
 
           <div class="tile" data-id="car_pendiente">
@@ -1092,7 +1134,12 @@ hr.sep{
                 <path d="M6 18l2 2 4-4"/>
               </svg>
             </div>
-            <div><div class="tText">Realizar al menos una obra de servicio individual.</div></div>
+            <div>
+              <div class="tText">
+                Realizar al menos una obra de caridad individual
+                <span class="paren">(Opciones en el grupo de Whatsapp).</span>
+              </div>
+            </div>
           </div>
 
           <div class="tile" data-id="car_fam">
@@ -1111,9 +1158,9 @@ hr.sep{
 
         <hr class="sep"/>
 
-        <div class="groupTitle">Opciones de labor social en familia</div>
+        <div class="groupTitle light">Opciones de labor social en familia</div>
         <div class="tiles">
-          <div class="tile" data-id="car_despensa">
+          <div class="tile listTile" data-id="car_despensa" aria-disabled="true">
             <div class="tIco">
               <svg viewBox="0 0 24 24">
                 <path d="M4 7h16v14H4z"/>
@@ -1124,7 +1171,7 @@ hr.sep{
             <div><div class="tText">Llevar despensa a una familia necesitada.</div></div>
           </div>
 
-          <div class="tile" data-id="car_parroquia">
+          <div class="tile listTile" data-id="car_parroquia" aria-disabled="true">
             <div class="tIco">
               <svg viewBox="0 0 24 24">
                 <path d="M12 2v4"/>
@@ -1136,7 +1183,7 @@ hr.sep{
             <div><div class="tText">Servir juntos en una parroquia o comedor.</div></div>
           </div>
 
-          <div class="tile" data-id="car_asilo">
+          <div class="tile listTile" data-id="car_asilo" aria-disabled="true">
             <div class="tIco">
               <svg viewBox="0 0 24 24">
                 <path d="M4 11 12 4l8 7v10H4V11Z"/>
@@ -1146,7 +1193,7 @@ hr.sep{
             <div><div class="tText">Visitar un asilo o casa hogar.</div></div>
           </div>
 
-          <div class="tile" data-id="car_comida">
+          <div class="tile listTile" data-id="car_comida" aria-disabled="true">
             <div class="tIco">
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="7"/>
@@ -1156,7 +1203,7 @@ hr.sep{
             <div><div class="tText">Preparar y entregar comida a alguien necesitado.</div></div>
           </div>
 
-          <div class="tile" data-id="car_rural">
+          <div class="tile listTile" data-id="car_rural" aria-disabled="true">
             <div class="tIco">
               <svg viewBox="0 0 24 24">
                 <path d="M3 19h18"/>
@@ -1222,6 +1269,14 @@ try{ state = JSON.parse(localStorage.getItem(KEY) || "{}"); }catch(e){ state = {
 
 tiles.forEach(tile=>{
   const id = tile.dataset.id;
+
+  // Do not toggle "listTile" (non-button look)
+  if(tile.classList.contains("listTile")){
+    // ensure not marked as on visually
+    tile.classList.remove("on");
+    return;
+  }
+
   if(state[id]) tile.classList.add("on");
   tile.addEventListener("click", ()=>{
     tile.classList.toggle("on");
@@ -1247,7 +1302,11 @@ updateCounts();
 function resetGroup(prefix){
   Object.keys(state).forEach(k => { if(k.startsWith(prefix)) state[k] = false; });
   localStorage.setItem(KEY, JSON.stringify(state));
-  tiles.forEach(t => { if(t.dataset.id.startsWith(prefix)) t.classList.remove("on"); });
+  tiles.forEach(t => {
+    if(t.dataset.id && t.dataset.id.startsWith(prefix) && !t.classList.contains("listTile")){
+      t.classList.remove("on");
+    }
+  });
   updateCounts();
 }
 </script>
